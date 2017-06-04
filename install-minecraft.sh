@@ -22,10 +22,13 @@ systemInstall() {
 	echo "Downloading Minecraft"
 	wget http://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
 	echo "Downloading run script"
-	wget thatrunscript
+	wget https://github.com/RedPer/Linux-Minecraft-Installer/raw/master/InstallerFiles/minecraft-system
+	mv ./minecraft-system ./minecraft
+	chmod +x ./minecraft
 	echo "Downloading desktop file (Adds Minecraft to Gnome)"
 	cd /usr/share/applications
-	wget thatdesktopfile
+	wget https://github.com/RedPer/Linux-Minecraft-Installer/raw/master/InstallerFiles/minecraft-system.desktop
+	mv ./minecraft-system.desktop ./minecraft.desktop
 
 }
 
@@ -38,10 +41,13 @@ userInstall() {
         echo "Downloading Minecraft"
         wget http://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
         echo "Downloading run script"
-        wget thatrunscript
+        wget https://github.com/RedPer/Linux-Minecraft-Installer/raw/master/InstallerFiles/minecraft-user
+	mv ./minecraft-user ./minecraft
+	chmod +x ./minecraft
         echo "Downloading desktop file (Adds Minecraft to Gnome)"
         cd ~/.local/share/applications
-        wget thatdesktopfile
+        wget https://github.com/RedPer/Linux-Minecraft-Installer/raw/master/InstallerFiles/minecraft-user.desktop
+	mv ./minecraft-user.desktop ./minecraft.desktop
 
 }
 
